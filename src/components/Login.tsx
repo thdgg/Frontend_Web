@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface LoginProps {
     onLogin: (username: string, password: string) => void;
@@ -8,9 +9,17 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    const navigate = useNavigate();
+
+    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        onLogin(username, password);
+        try {
+            onLogin(username, password);
+            navigate("/profile");
+        } catch (error) {
+            console.error(error);
+            // Handle login error
+        }
     };
 
     return (

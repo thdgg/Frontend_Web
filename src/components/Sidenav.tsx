@@ -30,12 +30,14 @@ const Sidenav: React.FC = () => {
                         <span className="pl-4">About Us</span>
                     </Link>
 
-                    <a
+                    <Link
+                        to={"/history"}
+                        onClick={handleNav}
                         className={"w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"}
                     >
                         <AiOutlineHistory size={20} />
                         <span className="pl-4">History</span>
-                    </a>
+                    </Link>
 
                     <Link
                         to={"/login"}
@@ -53,6 +55,7 @@ const Sidenav: React.FC = () => {
                 <div className={"flex flex-col"}>
                     <Link
                         to={"/main-page"}
+                        onClick={handleNav}
                         className={"rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"}
                     >
                         <AiOutlineHome size={20} />
@@ -60,19 +63,23 @@ const Sidenav: React.FC = () => {
 
                     <Link
                         to={"/about-us"}
+                        onClick={handleNav}
                         className={"rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"}
                     >
                         <AiOutlineInfoCircle size={20} />
                     </Link>
 
-                    <a
+                    <Link
+                        to={"/history"}
+                        onClick={handleNav}
                         className={"rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"}
                     >
                         <AiOutlineHistory size={20} />
-                    </a>
+                    </Link>
 
                     <Link
                         to={"/login"}
+                        onClick={handleNav}
                         className={"rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"}
                     >
                         <AiOutlineLogin size={20} />
